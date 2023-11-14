@@ -80,7 +80,7 @@ export class SpatialHashMap {
 
 const entities = ECS.world.with('transform', 'spatialHashMap')
 
-export default function ({ cellSize = 1 }) {
+const SpatialHashingSystem = function ({ cellSize = 1 }) {
   useFrame(function SpatialHashingSystem() {
     for (const entity of entities) {
       entity.spatialHashMap.setEntity(
@@ -94,3 +94,5 @@ export default function ({ cellSize = 1 }) {
 
   return null
 }
+
+export default SpatialHashingSystem

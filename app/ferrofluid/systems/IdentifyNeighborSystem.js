@@ -1,10 +1,10 @@
 import { useFrame } from '@react-three/fiber'
-import { ECS, Entity } from '../state'
+import { ECS } from '../state'
 
 const entities = ECS.world.with('transform', 'neighbors', 'spatialHashMap')
 
 const IdentifyNeighborsSystem = function ({ maxDistance = 5 }) {
-  useFrame(function IdentifyNeighborsSystem(_, dt) {
+  useFrame(function IdentifyNeighborsSystem(_) {
     for (const entity of entities) {
       const { transform, neighbors, spatialHashMap } = entity
 
