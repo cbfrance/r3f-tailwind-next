@@ -1,7 +1,7 @@
 import { between } from 'randomish'
 import { useLayoutEffect } from 'react'
 import { Vector3 } from 'three'
-import { spawnBoid } from '../Boids'
+import { spawnBoid } from '../boids'
 import { ECS } from '../state'
 
 const useWorldSetup = () =>

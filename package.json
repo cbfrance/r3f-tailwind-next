@@ -24,6 +24,7 @@
     "leva": "^0.9.35",
     "miniplex-react": "^2.0.1",
     "next": "^13.4.13",
+    "randomish": "^0.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "three": "^0.154.0",
