@@ -6,7 +6,7 @@ import createECS from 'miniplex-react'
 import { SpatialHashMap } from './systems/SpatialHashingSystem'
 import { World } from 'miniplex'
 
-const ECS = createECS(new World())
+import { ECS } from './state'
 const boids = ECS.world.with('boid', 'jsx')
 
 export default function Boids() {
