@@ -2,20 +2,23 @@
 
 import { Instance, Instances } from '@react-three/drei'
 import { Vector3 } from 'three'
-import createECS from 'miniplex-react'
 import { SpatialHashMap } from './systems/SpatialHashingSystem'
-import { World } from 'miniplex'
 
 import { ECS } from './state'
 const boids = ECS.world.with('boid', 'jsx')
+import { Blob2 } from '@/components/canvas/Blob2'
+import { MeshDistortMaterial } from '@react-three/drei'
 
 export default function Boids() {
   return (
     <Instances>
-      <icosahedronGeometry />
-      <meshStandardMaterial color='#000000' />
+      {/* <icosahedronGeometry /> */}
+      <sphereGeometry />
+      {/* <Blob2 sphereGeometry1={1} sphereGeometry2={64} sphereGeometry3={64} /> */}
 
-      <ECS.Entities in={boids} children={(e) => e.jsx} />
+      <meshStandardMaterial color='#000000' />
+      <MeshDistortMaterial roughness={0} color={'#000'} />
+      <ECS.Entities in={boids}>{(e) => e.jsx}</ECS.Entities>
     </Instances>
   )
 }
@@ -36,7 +39,7 @@ export const spawnBoid = ({ position, velocity = new Vector3() }) => {
     },
     jsx: (
       <ECS.Component name='transform'>
-        <Instance position={position} scale={0.5} />
+        <Instance position={position} scale={1} />
       </ECS.Component>
     ),
   })

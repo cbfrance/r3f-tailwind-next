@@ -22,6 +22,7 @@
     "@react-three/fiber": "^8.13.6",
     "glsl-random": "^0.0.5",
     "leva": "^0.9.35",
+    "miniplex": "^2.0.0",
     "miniplex-react": "^2.0.1",
     "next": "^13.4.13",
     "randomish": "^0.1.6",

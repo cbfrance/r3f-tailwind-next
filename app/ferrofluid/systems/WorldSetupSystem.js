@@ -1,15 +1,17 @@
 import { between } from 'randomish'
 import { useLayoutEffect } from 'react'
 import { Vector3 } from 'three'
-import { spawnBoid } from '../boids'
+import { spawnBoid } from '../Boids'
 import { ECS } from '../state'
+
+const DISTANCE = 30
 
 const useWorldSetup = () =>
   useLayoutEffect(() => {
-    console.log('Populating Miniplex world')
+    // console.log('Populating Miniplex world')
 
     for (let i = 0; i < 1000; i++) {
-      const position = new Vector3().randomDirection().multiplyScalar(between(0, 10))
+      const position = new Vector3().randomDirection().multiplyScalar(between(0, DISTANCE))
 
       const velocity = new Vector3().randomDirection()
 
@@ -20,7 +22,7 @@ const useWorldSetup = () =>
     }
 
     return () => {
-      console.log('Clearing Miniplex world')
+      // console.log('Clearing Miniplex world')
       ECS.world.clear()
     }
   }, [])
