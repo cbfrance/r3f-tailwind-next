@@ -21,23 +21,23 @@ const IdentifyNeighborsSystem = function ({ maxDistance = 5 }) {
       /* Remove entity itself from neighbors */
       neighbors.splice(neighbors.indexOf(entity), 1)
 
-      // for (const otherEntity of entity.neighbors) {
-      //   /* The entity can't be its own neighbor */
-      //   if (entity === otherEntity) {
-      //     /* remove */
-      //     entity.neighbors.splice(entity.neighbors.indexOf(otherEntity), 1)
-      //   }
+      for (const otherEntity of entity.neighbors) {
+        /* The entity can't be its own neighbor */
+        if (entity === otherEntity) {
+          /* remove */
+          entity.neighbors.splice(entity.neighbors.indexOf(otherEntity), 1)
+        }
 
-      //   /* Calculate distance */
-      //   const distance = entity.transform.position.distanceTo(
-      //     otherEntity.transform!.position
-      //   )
+        /* Calculate distance */
+        const distance = entity.transform.position.distanceTo(
+          otherEntity.transform.position
+        )
 
-      //   if (distance >= maxDistance) {
-      //     /* remove */
-      //     entity.neighbors.splice(entity.neighbors.indexOf(otherEntity), 1)
-      //   }
-      // }
+        if (distance >= maxDistance) {
+          /* remove */
+          entity.neighbors.splice(entity.neighbors.indexOf(otherEntity), 1)
+        }
+      }
     }
   })
 

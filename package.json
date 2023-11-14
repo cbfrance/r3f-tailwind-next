@@ -20,6 +20,7 @@
     "@ducanh2912/next-pwa": "^9.4.0",
     "@react-three/drei": "^9.80.2",
     "@react-three/fiber": "^8.13.6",
+    "@react-three/rapier": "^1.1.2",
     "glsl-random": "^0.0.5",
     "leva": "^0.9.35",
     "miniplex": "^2.0.0",

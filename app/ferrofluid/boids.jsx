@@ -5,9 +5,10 @@ import { Vector3 } from 'three'
 import { SpatialHashMap } from './systems/SpatialHashingSystem'
 
 import { ECS } from './state'
-const boids = ECS.world.with('boid', 'jsx')
-import { Blob2 } from '@/components/canvas/Blob2'
+// import { Blob2 } from '@/components/canvas/Blob2'
 import { MeshDistortMaterial } from '@react-three/drei'
+
+const boids = ECS.world.with('boid', 'jsx')
 
 export default function Boids() {
   return (
